@@ -9,13 +9,22 @@ connectDB();
 const app = express();
 
 // CORS configuration for production
+// app.use(cors({
+//   origin: process.env.NODE_ENV === 'production' 
+//     ? ['https://todo-list-frontend-puce.vercel.app'] // Replace with your actual frontend URL
+//     : ['http://localhost:5173'], // Add your local frontend ports
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? ['https://todo-list-frontend-puce.vercel.app'] // Replace with your actual frontend URL
-    : ['http://localhost:5173'], // Add your local frontend ports
+  origin: [
+    'http://localhost:5173', // Vite default port
+    'http://localhost:3000', // React default port
+    'http://localhost:3001', // Alternative port
+    'https://todo-list-frontend-puce.vercel.app' // Replace with your deployed frontend URL
+  ],
   credentials: true
 }));
-
 app.use(express.json());
 
 // Routes
