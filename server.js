@@ -22,7 +22,7 @@ app.use(cors({
     'http://localhost:3000', // React default port
     'http://localhost:3001', // Alternative port
     'https://todo-list-frontend-puce.vercel.app',
-    'http://100.25.43.78/'
+    'http://100.25.43.78'
   ],
   credentials: true
 }));
