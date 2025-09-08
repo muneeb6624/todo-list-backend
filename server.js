@@ -21,7 +21,8 @@ app.use(cors({
     'http://localhost:5173', // Vite default port
     'http://localhost:3000', // React default port
     'http://localhost:3001', // Alternative port
-    'https://todo-list-frontend-puce.vercel.app' // Replace with your deployed frontend URL
+    'https://todo-list-frontend-puce.vercel.app',
+    'http://100.25.43.78/'
   ],
   credentials: true
 }));
